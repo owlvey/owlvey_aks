@@ -8,7 +8,11 @@ env: # Or as an environment variable
 jobs:    
   build-and-deploy:
     runs-on: ubuntu-latest
-    steps:    
+    steps: 
+    - name: Install dependencies
+      shell: pwsh
+      run: |
+        Install-Module -Name Az -Repository PSGallery
     - uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
