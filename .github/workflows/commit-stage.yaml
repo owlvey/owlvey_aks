@@ -12,7 +12,7 @@ jobs:
     - name: Install dependencies
       shell: pwsh
       run: |
-        Install-Module -Name Az -Repository PSGallery
+        Install-Module -Name Az -Repository PSGallery -Force
     - uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
