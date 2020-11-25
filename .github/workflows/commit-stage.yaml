@@ -2,7 +2,7 @@ name: WebSiteTest
 on:
   push:
     branches: 
-    - 'master/**'
+    - '*'
 jobs:    
     build:      
       name: Build 
