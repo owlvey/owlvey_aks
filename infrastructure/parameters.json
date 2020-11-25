@@ -1,0 +1,12 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vaults_owlvey_secrets_name": {
+            "value": "owlveysecretv1"
+        },
+        "registries_owlveyregistry_name": {
+            "value": "owlveyregistryv1"
+        }
+    }
+}
