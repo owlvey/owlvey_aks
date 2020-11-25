@@ -7,9 +7,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Sample Azure action
-      with: # Set Azure credentials secret as an input
-        credentials: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Sample Azure action      
       env: # Or as an environment variable
         credentials: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Set selected color
