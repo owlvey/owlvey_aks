@@ -8,8 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Set selected color
-      run: echo ${{ secrets.AZURE_CREDENTIALS }}
-
+      run: echo 'everyting is ok'      
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
