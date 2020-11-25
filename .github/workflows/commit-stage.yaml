@@ -8,11 +8,16 @@ env: # Or as an environment variable
 jobs:    
   build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-    - name: Set selected color
-      run: echo $credentials      
+    steps:    
     - uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
+        enable-AzPSSession: true 
+        allow-no-subscriptions: true
+    - uses: actions/checkout@v2 
+    - name: Build
+      shell: pwsh
+      run: |
+        .\build.ps1
     - run: |
         az webapp list --query "[?state=='Running']"
