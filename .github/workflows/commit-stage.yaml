@@ -3,13 +3,12 @@ on:
   push:
     branches: 
     - '*'
+env: # Or as an environment variable
+  credentials: ${{ secrets.AZURE_CREDENTIALS }}
 jobs:    
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Sample Azure action      
-      env: # Or as an environment variable
-        credentials: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Set selected color
       run: echo $credentials      
     - uses: azure/login@v1
