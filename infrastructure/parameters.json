@@ -7,6 +7,9 @@
         },
         "registries_owlveyregistry_name": {
             "value": "owlveyregistryv1"
+        },
+        "userAssignedIdentities_owlvey_dev_identity_name": {
+            "value": "owlvey-dev-identity"            
         }
     }
 }

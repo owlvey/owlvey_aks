@@ -1,5 +1,5 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "vaults_owlvey_secrets_name": {
@@ -9,10 +9,20 @@
         "registries_owlveyregistry_name": {
             "defaultValue": "owlveyregistry",
             "type": "String"
+        },
+        "userAssignedIdentities_owlvey_dev_identity_name": {
+            "defaultValue": "owlvey-dev-identity",
+            "type": "String"
         }
     },
     "variables": {},
     "resources": [
+        {
+            "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
+            "apiVersion": "2018-11-30",
+            "name": "[parameters('userAssignedIdentities_owlvey_dev_identity_name')]",
+            "location": "centralus"
+        },
         {
             "type": "Microsoft.ContainerRegistry/registries",
             "apiVersion": "2019-12-01-preview",
